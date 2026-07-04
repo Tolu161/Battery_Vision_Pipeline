@@ -1,0 +1,32 @@
+{
+  "images": 37,
+  "annotations": 1188,
+  "splits": {
+    "train": 26,
+    "val": 6,
+    "test": 5
+  },
+  "classes": [
+    "adhesive-glue",
+    "battery-case",
+    "battery-case-cover",
+    "cell-battery",
+    "empty-cell-tray",
+    "empty-case-tray",
+    "hole",
+    "pcb",
+    "tray"
+  ],
+  "class_counts": {
+    "tray": 52,
+    "hole": 502,
+    "battery-case-cover": 25,
+    "empty-case-tray": 49,
+    "battery-case": 55,
+    "pcb": 49,
+    "adhesive-glue": 172,
+    "cell-battery": 180,
+    "empty-cell-tray": 104
+  },
+  "skipped_segmentation_masks": 0
+}

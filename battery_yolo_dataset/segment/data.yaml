@@ -1,0 +1,14 @@
+path: C:\Users\egyto1\OneDrive - The University of Nottingham\Documents\PhD Research\battery_vision_local_pipeline_revised\battery_vision_local\battery_yolo_dataset\segment
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: adhesive-glue
+  1: battery-case
+  2: battery-case-cover
+  3: cell-battery
+  4: empty-cell-tray
+  5: empty-case-tray
+  6: hole
+  7: pcb
+  8: tray
