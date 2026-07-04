@@ -2,13 +2,12 @@
 
 This project replaces the hosted Roboflow API with local Ultralytics models.
 
-## Recommended order
+## Pipeline Order 
 
 1. Prepare both local dataset formats.
 2. Train the one-model YOLO segmentation baseline.
 3. Run it on the video and verify labels, masks and the priority decision.
-4. Train the YOLO detector and compare the two-stage YOLO + SAM 2 pipeline.
-5. Use the generated JSONL scene graphs as the input data for a later trainable graph reasoner.
+4. Train the YOLO detector 
 
 ## Environment
 
@@ -81,19 +80,10 @@ python battery_video_pipeline.py \
   --frame-stride 5
 ```
 
-The YOLO model supplies the class and bounding box. SAM is class-agnostic and uses the box as a prompt to produce the mask.
+The YOLO model supplies the class and bounding box. SAM uses the box as a prompt to produce the mask.
 
 ## Outputs
 
 - `battery_predictions.mp4`: annotated video
 - `battery_graphs.jsonl`: detections, scene-graph nodes/edges and selected priority target for every processed frame
 
-Inspect a graph:
-
-```bash
-python inspect_graph.py battery_graphs.jsonl --frame 0
-```
-
-## Important scope distinction
-
-The graph builder in this first prototype is not yet a Type-6-style trainable reasoner. It is a deterministic bridge from perception to structured data. A later graph neural network can be trained using these graph states and target subgoals.
